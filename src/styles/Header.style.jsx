@@ -10,21 +10,20 @@ export const Header = styled.div`
   align-items: center;
   width: 100%;
   height: 70px;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 60% 37% 3%;
   background-color: black;
   font-family: "OpenSansMedium";
   color: white;
-
 `
 
 export const Link = styled.div`
   display: flex;
   justify-content: flex-end;
+  margin-right: 20px;
   width: 100%;
   padding-top: 12px;
   color: white;
   text-decoration: none;
-
 `
 
 export const Menu = styled.span`
@@ -46,7 +45,7 @@ export const Menu = styled.span`
     transition: transform 0.3s;
     content: '';
   }
-  
+
   &:first-child {
     border-bottom: ${props => props.route === "Logs" ? "2px solid white" : "none"};
     &:hover{ 
@@ -73,5 +72,8 @@ export const Menu = styled.span`
   }
 `
 
+export const Logo = styled.svg`
+  margin-left: 20px;
+`
 
 
