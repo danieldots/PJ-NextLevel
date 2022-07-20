@@ -14,11 +14,9 @@ function Home () {
   });
 
   const [modalOpen, setModalOpen] = useState(false);
-  
   const openModal = () => {
     setModalOpen(true);
   };
-
 
   const [registerForm, setRegisterForm] = useState({
     name: '',

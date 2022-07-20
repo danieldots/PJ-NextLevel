@@ -12,9 +12,10 @@ function Routine() {
     <S.Container>
       <Header route="Routine" />
       <S.RoutineBox openCard={openCard}>
-        <S.addRoutineCard openCard={openCard}>
-          {openCard ? null : <S.addIcon onClick={addRoutine} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Circled_plus.svg/800px-Circled_plus.svg.png" />}
-        </S.addRoutineCard>
+        <S.AddRoutineCard openCard={openCard}>
+          {openCard ? null : <S.AddIcon onClick={addRoutine} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Circled_plus.svg/800px-Circled_plus.svg.png" />}
+        </S.AddRoutineCard>
+        <S.ExerciseCard openCard={openCard}></S.ExerciseCard> 
       </S.RoutineBox>
     </S.Container>
   )
