@@ -10,9 +10,9 @@ function Header({ route }) {
         <path d="M7.66051 12V3.27273H9.76989V10.2869H13.4006V12H7.66051Z" fill="white"/>
       </S.Logo>
       <S.Link >
-        <S.Menu as="a" href="/logs" route={route}>Logs</S.Menu>
-        <S.Menu as="a" href="/routine" route={route}>Routine</S.Menu>
         <S.Menu as="a" href="/mypage" route={route}>MyPage</S.Menu>
+        <S.Menu as="a" href="/routine" route={route}>Routine</S.Menu>
+        <S.Menu as="a" href="/logs" route={route}>Logs</S.Menu>
         <S.Menu>Image</S.Menu>
       </S.Link>
       </S.Header>

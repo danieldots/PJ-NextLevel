@@ -14,6 +14,7 @@ export const Header = styled.div`
   background-color: black;
   font-family: "OpenSansMedium";
   color: white;
+  z-index: 1;
 `
 
 export const Link = styled.div`
@@ -47,10 +48,10 @@ export const Menu = styled.span`
   }
 
   &:first-child {
-    border-bottom: ${props => props.route === "Logs" ? "2px solid white" : "none"};
+    border-bottom: ${props => props.route === "MyPage" ? "2px solid white" : "none"};
     &:hover{ 
       &::before {
-        transform: ${props => props.route === "Logs" ? "scaleX(0)" : "scaleX(1)"};
+        transform: ${props => props.route === "MyPage" ? "scaleX(0)" : "scaleX(1)"};
       }
     }
   }
@@ -63,10 +64,10 @@ export const Menu = styled.span`
     }
   }
   &:nth-child(3) {
-    border-bottom: ${props => props.route === "MyPage" ? "2px solid white" : "none"};
+    border-bottom: ${props => props.route === "Logs" ? "2px solid white" : "none"};
     &:hover{ 
       &::before {
-        transform: ${props => props.route === "MyPage" ? "scaleX(0)" : "scaleX(1)"};
+        transform: ${props => props.route === "Logs" ? "scaleX(0)" : "scaleX(1)"};
       }
     }
   }

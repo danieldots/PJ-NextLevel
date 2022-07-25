@@ -4,7 +4,7 @@ function Modal({ open, close }) {
 
   return(
       <S.ModalWindow open={open}>
-        <S.ModalText as="a" href="/logs">이제 시작해볼게요!</S.ModalText>
+        <S.ModalText as="a" href="/mypage">이제 시작해볼게요!</S.ModalText>
       </S.ModalWindow>
 
 )}
