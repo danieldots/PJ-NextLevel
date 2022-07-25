@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Exercise from "./routes/Exercise";
 import Home from "./routes/Home";
 import Logs from "./routes/Logs";
 import MyPage from "./routes/MyPage";
@@ -9,15 +10,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
         <Route path="/logs" element={<Logs />} />
-      </Routes>
-      <Routes>
         <Route path="/routine" element={<Routine />} />
-      </Routes>
-      <Routes>
         <Route path="/mypage" element={<MyPage />} />
+        <Route path="/exercise" element={<Exercise />} />
       </Routes>
     </BrowserRouter>
   );

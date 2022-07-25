@@ -31,7 +31,6 @@ function Home () {
       ...registerForm,
       [e.target.name]: e.target.value
     });
-    console.log(registerForm);
   };
   
   const submit = () => {
@@ -40,8 +39,7 @@ function Home () {
 
   return (
     <S.Container id="fullpage">
-        <S.HomeTitle className="section">당신의 다음 레벨을 확인하세요</S.HomeTitle>
-        <S.HomeTitle className="section">다음섹션</S.HomeTitle>
+        <S.HomeTitle className="section">당신의 다음 레벨에 도전하세요</S.HomeTitle>
         <S.RegisterWindow className="section">
           프로필을 등록해주세요<br />
             <div>

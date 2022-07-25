@@ -48,7 +48,7 @@ function Routine() {
       numbers: 0,
       sets: 0,
       duration: 2,
-      calories: 1
+      calories: 1.5
       },
     {
       id: 5,
@@ -58,7 +58,7 @@ function Routine() {
       numbers: 0,
       sets: 0,
       duration: 3,
-      calories: 0.15
+      calories: 1
       },
     {
       id: 6,
@@ -68,7 +68,7 @@ function Routine() {
       numbers: 0,
       sets: 0,
       duration: 4,
-      calories: 0.25
+      calories: 1.25
       },
     {
       id: 7,
@@ -78,7 +78,7 @@ function Routine() {
       numbers: 0,
       sets: 0,
       duration: 1.5,
-      calories: 0.2
+      calories: 1
       },
     {
       id: 8,
@@ -88,7 +88,7 @@ function Routine() {
       numbers: 0,
       sets: 0,
       duration: 3,
-      calories: 0.2
+      calories: 1
       },
     {
       id: 9,
@@ -98,7 +98,7 @@ function Routine() {
       numbers: 0,
       sets: 0,
       duration: 0.8,
-      calories: 0.25
+      calories: 0.8
       },
     {
       id: 10,
@@ -118,7 +118,7 @@ function Routine() {
       numbers: 0,
       sets: 0,
       duration: 2.5,
-      calories: 0.3
+      calories: 1.2
       },
     {
       id: 12,
@@ -178,22 +178,26 @@ function Routine() {
   }
 
   //루틴 컨펌
-  const [routineList, setRoutineList] = useState([])
-
-  const confirmRoutine = () => {
-    setOpenCard(prev => !prev);
-    routineList.push(routineExercises)
-    localStorage.setItem("Routine List", JSON.stringify(routineList));
-    setRoutineExercises([]);
-    paintRoutines();
-    console.log(savedRoutines)
-  }
-
-  //루틴 그리기 
   const [savedRoutines, setSavedRoutines] = useState([])
   const paintRoutines = () => {
     setSavedRoutines(JSON.parse(localStorage.getItem("Routine List")))
   } ;
+
+  let routineList = []
+  const confirmRoutine = () => {
+    setOpenCard(prev => !prev);
+    if (savedRoutines){
+      routineList = savedRoutines
+      routineList.push(routineExercises)
+    }
+    localStorage.setItem("Routine List", JSON.stringify(routineList));
+    setInputs('')
+    setRoutineExercises([]);
+    paintRoutines();
+    console.log(routineList)
+  }
+
+  //루틴 삭제
 
   //페이지 시작시 루틴 그리기
   useEffect(() => {
@@ -239,7 +243,7 @@ function Routine() {
       if (idx === index) {      
         return {
           ...routineExercise,
-          numbers: routineExercise.numbers + 5,
+          numbers: routineExercise.numbers + 1,
         };
       } else {
         return routineExercise
@@ -248,20 +252,20 @@ function Routine() {
     setRoutineExercises(routineWithNumbers);
   }
 
-    //운동횟수 감소
-    const decreaseNumbers = (index) => {
-      const routineWithNumbers = routineExercises.map((routineExercise, idx) => {
-        if (idx === index) {      
-          return {
-            ...routineExercise,
-            numbers: routineExercise.numbers - 5,
-          };
-        } else {
-          return routineExercise
-        }
-      });
-      setRoutineExercises(routineWithNumbers);
-    }
+  //운동횟수 감소
+  const decreaseNumbers = (index) => {
+    const routineWithNumbers = routineExercises.map((routineExercise, idx) => {
+      if (idx === index) {      
+        return {
+          ...routineExercise,
+          numbers: routineExercise.numbers - 5,
+        };
+      } else {
+        return routineExercise
+      }
+    });
+    setRoutineExercises(routineWithNumbers);
+  }
 
   //세트 추가
   const addSets = (index) => {
@@ -293,6 +297,19 @@ function Routine() {
     setRoutineExercises(routineWithSets);
   }
 
+  //루틴 이름
+  const [inputs, setInputs] = useState({
+    name: ''
+  })
+
+  const getName = (e) => {
+    const{value} = e.target;
+    setInputs({
+      ...inputs,
+      name: value
+    });
+  };
+
   return (
     <S.Container>
       <Header route="Routine" />
@@ -304,7 +321,7 @@ function Routine() {
               <S.AddIcon onClick={addRoutine} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Circled_plus.svg/800px-Circled_plus.svg.png" />
             }
             {openCard ? 
-              <ConfirmSection confirmRoutine={confirmRoutine} /> : 
+              <ConfirmSection confirmRoutine={confirmRoutine} inputs={inputs} getName={getName}/> : 
               null
             }
             {openCard ? 
@@ -319,8 +336,8 @@ function Routine() {
               null
             }
           </S.AddRoutineCard>
-          {savedRoutines.map((routine, idx) => (
-            <RoutineCard key={idx} routine={routine}/>
+          {savedRoutines && savedRoutines.map((routine, idx) => (
+            <RoutineCard key={idx} routine={routine} inputs={inputs}/>
           ))}    
         </S.RoutineList>
         {openCard ? (
@@ -328,9 +345,9 @@ function Routine() {
             {page ? 
             <FirstPage firstPage={firstPage} exercises={exercises} addExercise={addExercise} openCard={openCard}/> : 
             <SecondPage secondPage={secondPage} exercises={exercises} addExercise={addExercise} openCard={openCard}/>
-            }   
-            <button onClick={() => clickFirstPage()}>1</button>
-            <button onClick={() => clickSecondPage()}>2</button>
+            }
+            <S.PageButton1 onClick={() => clickFirstPage()}>1</S.PageButton1>
+            <S.PageButton2 onClick={() => clickSecondPage()}>2</S.PageButton2>
           </S.CardBox> 
           ): 
           null

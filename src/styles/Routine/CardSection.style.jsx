@@ -5,16 +5,19 @@ export const CardText = styled.div`
   width: 100%;
   height: 18px;
   font-family: "OpenSansMedium";
-  font-size: 16px;
+  font-size: 13px;
   color: gray;
+  margin-left: 10px;
 `
 
 export const CardMainText = styled.div`
   width: 100%;
   height: 100%;
   font-family: "OpenSansMedium";
-  font-size: 22px;
+  font-size: 16px;
   color: black;
+  margin-top: 10px;
+  margin-left: 10px;
 `
 
 export const AddedExercise = styled.div`
@@ -48,6 +51,19 @@ export const AddNumbersButton = styled.button`
   color: white;
   border-radius: 3px;
   text-decoration:l none;
+  &:hover{
+    cursor: pointer;
+  }
+`
+export const AddExerciseButton = styled.button`
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  font-family: "OpenSansMedium";
+  border-radius: 0 0 10px 10px;
+  font-size: 12px;
   &:hover{
     cursor: pointer;
   }

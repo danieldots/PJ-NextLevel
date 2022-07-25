@@ -13,9 +13,7 @@ function FirstPage({ firstPage, exercises, addExercise, openCard}) {
           numbers={exercise.numbers}
           sets={exercise.sets}
           duration={exercise.duration}
-          totalDuration={exercise.totalDuration}
           calories={exercise.calories} 
-          totalCalories={exercise.totalCalories}
           addExercise={addExercise}
           openCard={openCard} />
       ))}

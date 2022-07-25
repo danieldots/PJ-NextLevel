@@ -25,6 +25,7 @@ export const Link = styled.div`
   padding-top: 12px;
   color: white;
   text-decoration: none;
+
 `
 
 export const Menu = styled.span`
@@ -34,6 +35,9 @@ export const Menu = styled.span`
   margin-left: 15px;
   color: white;
   text-decoration: none;
+  &:hover{
+    cursor: pointer;
+  }
 
   &::before {
     position: absolute;
@@ -75,6 +79,9 @@ export const Menu = styled.span`
 
 export const Logo = styled.svg`
   margin-left: 20px;
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 

@@ -14,6 +14,17 @@ export const Box = styled.div`
   div{
     width: 100%;
     height: 100%;
-    border-right: 1px solid black;
+  }
+`
+
+export const TextBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  span{
+    font-size: 40px;
+    font-weight: border;
+    color: #4793de;
   }
 `

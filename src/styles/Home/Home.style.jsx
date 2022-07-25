@@ -5,6 +5,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  justify-items: center;
+  padding-left: 500px;
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -22,6 +24,7 @@ export const RegisterWindow = styled.div`
   height: 30%;
   color: white;
   font-family: "OpenSansMedium";
+  padding-left: 150px;
   font-size: 40px;
   div {
     font-size: 20px;
@@ -32,11 +35,12 @@ export const RegisterWindow = styled.div`
 `
 
 export const RegisterInput = styled.input`
-  width: 70%;
+  width: 10%;
   color: white;
   font-family: "OpenSansMedium";
   background-color: transparent;
   border: 0;
+  font-size: 30px;
   border-bottom: 1px solid white;
 `
 
@@ -45,5 +49,13 @@ export const RegisterButton = styled.button`
   font-family: "OpenSansMedium";
   background-color: transparent;
   text-decoration: none;
+  font-size: 40px;
+  border: 0;
+  outline: 0;
+  margin-top: 30px;
+  margin-left: 50px;
+  &:hover {
+    cursor: pointer;
+  }
 `
 

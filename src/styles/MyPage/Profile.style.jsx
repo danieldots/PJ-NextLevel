@@ -12,3 +12,14 @@ export const Box = styled.div`
   font-family: "openSansMedium";
 `
 
+export const textBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  span{
+    font-size: 40px;
+    font-weight: border;
+    color: #4793de;
+  }
+`
