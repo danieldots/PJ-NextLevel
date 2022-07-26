@@ -5,6 +5,7 @@ import 'fullpage.js/dist/jquery.fullpage.min.css';
 import $ from 'jquery';
 import { useState } from "react";
 import Modal from '../components/Modal'
+import { useNavigate } from "react-router-dom";
 
 function Home () {
   $(() => {
@@ -13,10 +14,12 @@ function Home () {
     });
   });
 
-  const [modalOpen, setModalOpen] = useState(false);
-  const openModal = () => {
-    setModalOpen(true);
-  };
+  const navigate = useNavigate()
+
+  // const [modalOpen, setModalOpen] = useState(false);
+  // const openModal = () => {
+  //   setModalOpen(true);
+  // };
 
   const [registerForm, setRegisterForm] = useState({
     name: '',
@@ -51,9 +54,9 @@ function Home () {
             </div>
           <S.RegisterButton onClick={() =>{
             submit()
-            openModal()
+            navigate('/mypage')
           }}>완료!</S.RegisterButton>
-          <Modal open={modalOpen} />
+          {/* <Modal open={modalOpen} /> */}
         </S.RegisterWindow>
     </S.Container>
   );

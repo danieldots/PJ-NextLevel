@@ -23,3 +23,11 @@ export const textBox = styled.div`
     color: #4793de;
   }
 `
+
+export const leftBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+
+`

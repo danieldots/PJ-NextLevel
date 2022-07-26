@@ -8,7 +8,7 @@ function RoutineCard({ routine }) {
   let totalDuration = 0;
   for (let i = 0; i < routine.length; i++){
     if (routine[i].id) {
-      totalDuration = totalDuration + (routine[i].numbers * routine[i].sets * routine[i].duration) + (routine[i].sets * 45)
+      totalDuration = totalDuration + (routine[i].numbers * routine[i].sets * routine[i].duration) + (routine[i].sets * 20)
     }
   } 
   const minute = Math.floor(totalDuration/60)
@@ -27,7 +27,6 @@ function RoutineCard({ routine }) {
   useEffect(() => {
     setRoutineName(name)
   }, [])
-
   const startExercise = () => {
     navigate(`/exercise`, { state: { routine } })
   }

@@ -17,18 +17,18 @@ function Routine() {
       name: '버피',
       numbers: 0,
       sets: 0,
-      duration: 4,
+      duration: 3,
       calories: 2.5
     },
     {
       id: 2,
       type: '유산소',
       part: '하체',
-      name: '자전거 타기',
+      name: '크로스 트레이너',
       numbers: 0,
       sets: 0,
-      duration: 600,
-      calories: 100
+      duration: 2,
+      calories: 1
       },
     {
       id: 3,
@@ -186,15 +186,15 @@ function Routine() {
   let routineList = []
   const confirmRoutine = () => {
     setOpenCard(prev => !prev);
+    routineExercises.push(inputs)
     if (savedRoutines){
-      routineList = savedRoutines
-      routineList.push(routineExercises)
+      routineList = savedRoutines;
+      routineList.push(routineExercises);
     }
     localStorage.setItem("Routine List", JSON.stringify(routineList));
     setInputs('')
     setRoutineExercises([]);
     paintRoutines();
-    console.log(routineList)
   }
 
   //루틴 삭제

@@ -10,16 +10,19 @@ function Exercise() {
   const location = useLocation()
   const { routine } = location.state
   const exercises = routine.filter((exercise) => exercise.type)
+
+  const [exerciseIdx, setExeciseIdx] = useState(0)
+
   const [exercise, setExercise] = useState([])
 
   const nextExercise = () => {
-    setExercise([exercises[1]])
+    setExeciseIdx(prev => prev+1)
   }
   
   useEffect(() => {
-    setExercise([exercises[0]])
+    setExercise([exercises[exerciseIdx]])
   }, []) 
-  console.log(exercise)
+
   return (
     <S.Container>
       {exercise.map((exercise, idx) => (

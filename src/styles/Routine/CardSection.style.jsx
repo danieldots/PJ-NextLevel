@@ -43,16 +43,21 @@ export const CardSection = styled.div`
 `
 
 export const AddNumbersButton = styled.button`
-  width: 20px;
-  background-color: black;
+  width: 15px;
+  background-color: gray;
   font-family: "OpenSansMedium";
-  font-size: 15px;
+  font-size: 10px;
   text-align: center; 
   color: white;
-  border-radius: 3px;
-  text-decoration:l none;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  text-decoration: none;
   &:hover{
     cursor: pointer;
+  }
+  &:active{
+    background-color: #80808080;
   }
 `
 export const AddExerciseButton = styled.button`

@@ -93,6 +93,9 @@ export const PageButton1 = styled.button`
   &:hover{
     cursor: pointer
   }
+  &:active{
+    background-color: #80808080;
+  }
 `
 
 export const PageButton2 = styled.button`
@@ -107,6 +110,9 @@ export const PageButton2 = styled.button`
   outline: none;
   &:hover{
     cursor: pointer
+  }
+  &:active{
+    background-color: #80808080;
   }
 `
 

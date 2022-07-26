@@ -11,6 +11,7 @@ function ExerciseCard({ id, type, part, name, numbers, sets, duration, calories,
       numbers,
       sets,
       duration,
+      calories
     })
   }
   return (

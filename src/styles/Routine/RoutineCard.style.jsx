@@ -24,8 +24,9 @@ export const RoutineCardText = styled.div`
     color: white;
     line-height: 50px;
     text-decoration: none;
+      &:hover{
+      cursor: pointer
+    }
   }
-  &:hover{
-    cursor: pointer
-  }
+ 
 `
